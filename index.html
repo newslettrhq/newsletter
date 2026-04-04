@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Newsletter Bot | Story-first news for Discord</title>
+  <meta name="description" content="Newsletter Bot turns noisy feed blasts into grouped stories with source context, personal /getnews controls, and configurable server channels." />
+  <meta property="og:title" content="Newsletter Bot" />
+  <meta property="og:description" content="Story-first news delivery for Discord communities and personal workflows." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://newsletterbot.github.io/newslettersite/" />
+  <link rel="canonical" href="https://newsletterbot.github.io/newslettersite/" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="assets/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div data-reveal>
+          <p class="eyebrow">Discord-native news workflows</p>
+          <h1>Follow stories, not link spam.</h1>
+          <p>
+            Newsletter Bot delivers grouped stories with multi-source context so communities can scan the signal quickly.
+            Use it in servers or in your personal `/getnews` flow, then tune what gets posted, where it posts, and how often it posts.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank" rel="noopener noreferrer">Add to Server</a>
+            <a class="btn btn-secondary" href="#features">Explore Features</a>
+          </div>
+          <p class="hero-notes">Default setup supports up to 3 channels per server, with presets, role pings, and per-channel posting behavior.</p>
+        </div>
+
+        <aside class="hero-surface" aria-label="Example grouped story digest" data-reveal>
+          <div class="surface-head">
+            <h2 class="surface-title">Today in your server feed</h2>
+            <span class="surface-chip">Story Grouped</span>
+          </div>
+
+          <article class="story-group">
+            <div class="story-head">
+              <h3>AI chip launch: enterprise demand climbs</h3>
+              <span>5 linked sources</span>
+            </div>
+            <p>One lead summary with quick source jump-in instead of 5 separate posts across the channel.</p>
+            <div class="source-tags">
+              <span>Reuters</span>
+              <span>The Verge</span>
+              <span>TechCrunch</span>
+            </div>
+          </article>
+
+          <article class="story-group">
+            <div class="story-head">
+              <h3>Policy vote delayed after committee review</h3>
+              <span>3 linked sources</span>
+            </div>
+            <p>Context stays together so members can compare reporting angles without leaving Discord.</p>
+            <div class="source-tags">
+              <span>AP</span>
+              <span>BBC</span>
+              <span>Bloomberg</span>
+            </div>
+          </article>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container" data-reveal>
+        <div class="section-head">
+          <p class="eyebrow">Core value</p>
+          <h2 class="section-title">Built beyond basic RSS forwarding</h2>
+          <p class="section-text">
+            Most bots forward every article as a separate post. Newsletter Bot organizes coverage by story, keeps source visibility intact,
+            and gives admins the controls to keep channels readable.
+          </p>
+        </div>
+
+        <div class="comparison" role="table" aria-label="Comparison between basic RSS forwarding and Newsletter Bot">
+          <div class="comparison-row" role="row">
+            <div class="comparison-cell comparison-head" role="columnheader">What matters</div>
+            <div class="comparison-cell comparison-head" role="columnheader">Basic forwarder</div>
+            <div class="comparison-cell comparison-head" role="columnheader">Newsletter Bot</div>
+          </div>
+          <div class="comparison-row" role="row">
+            <div class="comparison-cell comparison-title" role="cell">Story-level updates</div>
+            <div class="comparison-cell comparison-muted" role="cell">Raw article stream</div>
+            <div class="comparison-cell comparison-good" role="cell">Grouped stories with cleaner digests</div>
+          </div>
+          <div class="comparison-row" role="row">
+            <div class="comparison-cell comparison-title" role="cell">Source context</div>
+            <div class="comparison-cell comparison-muted" role="cell">Single source per post</div>
+            <div class="comparison-cell comparison-good" role="cell">Browse multiple linked sources per story</div>
+          </div>
+          <div class="comparison-row" role="row">
+            <div class="comparison-cell comparison-title" role="cell">Discord controls</div>
+            <div class="comparison-cell comparison-muted" role="cell">Few admin options</div>
+            <div class="comparison-cell comparison-good" role="cell">Presets, role pings, channel behavior tuning</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Feature set</p>
+          <h2 class="section-title">Current bot capabilities</h2>
+          <p class="section-text">
+            The current release is designed for both community channels and personal reading. Features below reflect what the bot supports today.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card" data-reveal>
+            <h3 class="card-title">Story grouping first</h3>
+            <p>Related coverage is merged into one story thread to reduce repetitive channel spam.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3 class="card-title">Multi-source browsing</h3>
+            <p>Members can move across sources for the same story and compare reporting perspectives.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3 class="card-title">Server channels by default</h3>
+            <p>Configure up to 3 channels per server on default setup, each with its own focus.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3 class="card-title">Presets for faster setup</h3>
+            <p>Apply channel presets to launch quickly, then fine tune cadence and formatting.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3 class="card-title">Role pings with control</h3>
+            <p>Attach role notifications where needed so relevant teams see critical story updates.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3 class="card-title">Personal `/getnews` flow</h3>
+            <p>Run personal pulls, then shape your feed with preference controls instead of one-size-fits-all output.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3 class="card-title">Custom feed additions</h3>
+            <p>Discover and add feed sources that match your niche domains and community priorities.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3 class="card-title">Owner-side curation tools</h3>
+            <p>Review feed health, clean naming, and curate source quality to keep output trustworthy.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3 class="card-title">Smarter ranking signals</h3>
+            <p>Background ranking and organization improve ordering quality without making opaque AI promises.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow">
+      <div class="container split-panel">
+        <div data-reveal>
+          <div class="section-head">
+            <p class="eyebrow">Story-centric flow</p>
+            <h2 class="section-title">More signal, less noise in every channel</h2>
+            <p class="section-text">
+              The bot groups overlapping coverage into story-level updates, then keeps source visibility clear.
+              Your community sees one focused post instead of a flood of duplicate links.
+            </p>
+          </div>
+          <ul class="step-list">
+            <li class="step-item">
+              <strong>1. Ingest + normalize</strong>
+              <p>Feeds are cleaned and source names are normalized for clearer browsing and moderation.</p>
+            </li>
+            <li class="step-item">
+              <strong>2. Group by story</strong>
+              <p>Related articles are clustered so updates stay organized around events, not URLs.</p>
+            </li>
+            <li class="step-item">
+              <strong>3. Rank + post with rules</strong>
+              <p>Stories are ordered with structured ranking signals, then posted by channel rules and presets.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card" data-reveal>
+          <h3 class="card-title">Channel outcomes</h3>
+          <p>Admins get tighter feeds while members still get source choice and context depth.</p>
+          <div class="metric-strip" style="margin-top: 1rem;">
+            <div class="metric">
+              <strong>3</strong>
+              <span>default channels per server</span>
+            </div>
+            <div class="metric">
+              <strong>1 post</strong>
+              <span>per grouped story update</span>
+            </div>
+            <div class="metric">
+              <strong>Multi-source</strong>
+              <span>context preserved in Discord</span>
+            </div>
+          </div>
+          <ul class="list-clean" style="margin-top: 1rem;">
+            <li>Cleaner feed naming and source management</li>
+            <li>Posting behavior scoped per channel</li>
+            <li>Role ping support when relevance is critical</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="server-tools">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Server-first controls</p>
+          <h2 class="section-title">Built for moderators and operators</h2>
+          <p class="section-text">
+            Give each channel a purpose. Use presets for quick rollout, then tune frequency, source scope, and role pings to match each audience.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card" data-reveal>
+            <h3 class="card-title">Channel presets and behavior</h3>
+            <p>Start with curated presets, then customize grouping style, posting frequency, and source scope per channel.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3 class="card-title">Role-aware distribution</h3>
+            <p>Use role pings intentionally so high-priority updates land with the right teams.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3 class="card-title">Source naming and management</h3>
+            <p>Cleaner source labels and management tools make feeds easier to trust and audit.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3 class="card-title">Owner curation workflow</h3>
+            <p>Review feed health and quality, then keep weak or noisy sources out of production channels.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="personal">
+      <div class="container split-panel">
+        <div class="card" data-reveal>
+          <h3 class="card-title">Personal news with `/getnews`</h3>
+          <p>
+            Pull stories on demand, then refine your own preferences. Personal usage is built for readers who want control
+            without creating server-wide noise.
+          </p>
+          <ul class="list-clean" style="margin-top: 0.9rem;">
+            <li>Preference-driven results tuned to your interests</li>
+            <li>Custom feed discovery and additions</li>
+            <li>Source-aware browsing without leaving Discord</li>
+          </ul>
+        </div>
+
+        <div data-reveal>
+          <div class="section-head">
+            <p class="eyebrow">Personal mode</p>
+            <h2 class="section-title">One bot, two strong use cases</h2>
+            <p class="section-text">
+              You can run Newsletter Bot as a server news system and still use it personally for focused story pulls.
+              That keeps personal reading flexible while server channels stay structured.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Preview</p>
+          <h2 class="section-title">Interface snapshots</h2>
+          <p class="section-text">
+            Existing command and feed surfaces from the current bot, presented in a cleaner, story-first workflow.
+          </p>
+        </div>
+
+        <div class="gallery">
+          <figure class="gallery-item" data-reveal>
+            <img src="assets/example1.png" alt="Server news channel showing grouped story updates" loading="lazy" />
+            <figcaption class="gallery-caption">
+              <strong>Server stream layout</strong>
+              <span>Grouped updates with less channel clutter</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item" data-reveal>
+            <img src="assets/example2.png" alt="Personal digest format in Discord" loading="lazy" />
+            <figcaption class="gallery-caption">
+              <strong>Personal digest format</strong>
+              <span>Story summaries built for quick scans</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item" data-reveal>
+            <img src="assets/example3.png" alt="Preference controls for story and source behavior" loading="lazy" />
+            <figcaption class="gallery-caption">
+              <strong>Preference controls</strong>
+              <span>Adjust topics, source scope, and behavior</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item" data-reveal>
+            <img src="assets/example4.png" alt="Server channel configuration interface" loading="lazy" />
+            <figcaption class="gallery-caption">
+              <strong>Channel configuration</strong>
+              <span>Server-ready setup with channel-specific rules</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight" id="faq">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">FAQ</p>
+          <h2 class="section-title">Questions teams ask before launch</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" data-reveal>
+            <summary>How is this different from an RSS bot?</summary>
+            <p>It groups related articles into stories and keeps multi-source context together, so channels stay readable.</p>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>Can I separate topics by channel?</summary>
+            <p>Yes. Default server setup supports up to 3 channels, and each channel can have independent behavior and presets.</p>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>Do users have personal controls too?</summary>
+            <p>Yes. `/getnews` and preference controls let individuals run personalized pulls without affecting server defaults.</p>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>Are custom feeds supported?</summary>
+            <p>Yes. You can add custom feeds and use owner-side curation tools to monitor feed health and quality.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container">
+        <div class="cta-shell" data-reveal>
+          <h2>Ship a cleaner news experience in your Discord today.</h2>
+          <p>
+            Replace noisy link drops with grouped stories, source context, and configurable posting workflows built for real communities.
+          </p>
+          <div class="hero-actions" style="justify-content: center;">
+            <a class="btn btn-primary" href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank" rel="noopener noreferrer">Add Newsletter Bot</a>
+            <a class="btn btn-secondary" href="https://discord.gg/8GmjZnU2N9" target="_blank" rel="noopener noreferrer">Join Support Server</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
