@@ -23,6 +23,9 @@
 
   <main id="main-content">
     <section class="hero">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="assets/bg5.mp4" type="video/mp4" />
+      </video>
       <div class="container hero-grid">
         <div data-reveal>
           <p class="eyebrow">Discord-native news workflows</p>
@@ -38,42 +41,47 @@
           <p class="hero-notes">Default setup supports up to 3 channels per server, with presets, role pings, and per-channel posting behavior.</p>
         </div>
 
-        <aside class="hero-surface" aria-label="Example grouped story digest" data-reveal>
-          <div class="surface-head">
-            <h2 class="surface-title">Today in your server feed</h2>
-            <span class="surface-chip">Story Grouped</span>
-          </div>
+        <div class="hero-visual" data-reveal>
+          <img class="hero-robot" src="assets/bot.png" alt="Newsletter Bot mascot holding newspaper and coffee" />
+          <aside class="hero-surface" aria-label="Example grouped story digest">
+            <div class="surface-head">
+              <h2 class="surface-title">Today in your server feed</h2>
+              <span class="surface-chip">Story Grouped</span>
+            </div>
 
-          <article class="story-group">
-            <div class="story-head">
-              <h3>AI chip launch: enterprise demand climbs</h3>
-              <span>5 linked sources</span>
-            </div>
-            <p>One lead summary with quick source jump-in instead of 5 separate posts across the channel.</p>
-            <div class="source-tags">
-              <span>Reuters</span>
-              <span>The Verge</span>
-              <span>TechCrunch</span>
-            </div>
-          </article>
+            <article class="story-group">
+              <div class="story-head">
+                <h3>AI chip launch: enterprise demand climbs</h3>
+                <span>5 linked sources</span>
+              </div>
+              <p>One lead summary with quick source jump-in instead of 5 separate posts across the channel.</p>
+              <div class="source-tags">
+                <span>Reuters</span>
+                <span>The Verge</span>
+                <span>TechCrunch</span>
+              </div>
+            </article>
 
-          <article class="story-group">
-            <div class="story-head">
-              <h3>Policy vote delayed after committee review</h3>
-              <span>3 linked sources</span>
-            </div>
-            <p>Context stays together so members can compare reporting angles without leaving Discord.</p>
-            <div class="source-tags">
-              <span>AP</span>
-              <span>BBC</span>
-              <span>Bloomberg</span>
-            </div>
-          </article>
-        </aside>
+            <article class="story-group">
+              <div class="story-head">
+                <h3>Policy vote delayed after committee review</h3>
+                <span>3 linked sources</span>
+              </div>
+              <p>Context stays together so members can compare reporting angles without leaving Discord.</p>
+              <div class="source-tags">
+                <span>AP</span>
+                <span>BBC</span>
+                <span>Bloomberg</span>
+              </div>
+            </article>
+          </aside>
+        </div>
       </div>
     </section>
 
-    <section class="section section-tight">
+    <hr class="section-divider" />
+
+    <section class="section section-tight section-band-alt">
       <div class="container" data-reveal>
         <div class="section-head">
           <p class="eyebrow">Core value</p>
@@ -109,7 +117,7 @@
       </div>
     </section>
 
-    <section class="section" id="features">
+    <section class="section section-band-dark" id="features">
       <div class="container">
         <div class="section-head" data-reveal>
           <p class="eyebrow">Feature set</p>
@@ -160,7 +168,7 @@
       </div>
     </section>
 
-    <section class="section" id="workflow">
+    <section class="section section-band-alt" id="workflow">
       <div class="container split-panel">
         <div data-reveal>
           <div class="section-head">
@@ -190,7 +198,7 @@
         <div class="card" data-reveal>
           <h3 class="card-title">Channel outcomes</h3>
           <p>Admins get tighter feeds while members still get source choice and context depth.</p>
-          <div class="metric-strip" style="margin-top: 1rem;">
+          <div class="metric-strip mt-1">
             <div class="metric">
               <strong>3</strong>
               <span>default channels per server</span>
@@ -204,7 +212,7 @@
               <span>context preserved in Discord</span>
             </div>
           </div>
-          <ul class="list-clean" style="margin-top: 1rem;">
+          <ul class="list-clean mt-1">
             <li>Cleaner feed naming and source management</li>
             <li>Posting behavior scoped per channel</li>
             <li>Role ping support when relevance is critical</li>
@@ -213,7 +221,7 @@
       </div>
     </section>
 
-    <section class="section" id="server-tools">
+    <section class="section section-band-dark" id="server-tools">
       <div class="container">
         <div class="section-head" data-reveal>
           <p class="eyebrow">Server-first controls</p>
@@ -244,7 +252,7 @@
       </div>
     </section>
 
-    <section class="section" id="personal">
+    <section class="section section-band-alt" id="personal">
       <div class="container split-panel">
         <div class="card" data-reveal>
           <h3 class="card-title">Personal news with `/getnews`</h3>
@@ -252,7 +260,7 @@
             Pull stories on demand, then refine your own preferences. Personal usage is built for readers who want control
             without creating server-wide noise.
           </p>
-          <ul class="list-clean" style="margin-top: 0.9rem;">
+          <ul class="list-clean mt-09">
             <li>Preference-driven results tuned to your interests</li>
             <li>Custom feed discovery and additions</li>
             <li>Source-aware browsing without leaving Discord</li>
@@ -272,7 +280,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-band-dark">
       <div class="container">
         <div class="section-head" data-reveal>
           <p class="eyebrow">Preview</p>
@@ -315,7 +323,9 @@
       </div>
     </section>
 
-    <section class="section section-tight" id="faq">
+    <hr class="section-divider" />
+
+    <section class="section section-tight section-band-alt" id="faq">
       <div class="container">
         <div class="section-head" data-reveal>
           <p class="eyebrow">FAQ</p>
@@ -343,14 +353,14 @@
       </div>
     </section>
 
-    <section class="section section-tight">
+    <section class="section section-tight section-band-dark">
       <div class="container">
         <div class="cta-shell" data-reveal>
           <h2>Ship a cleaner news experience in your Discord today.</h2>
           <p>
             Replace noisy link drops with grouped stories, source context, and configurable posting workflows built for real communities.
           </p>
-          <div class="hero-actions" style="justify-content: center;">
+          <div class="hero-actions actions-center">
             <a class="btn btn-primary" href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank" rel="noopener noreferrer">Add Newsletter Bot</a>
             <a class="btn btn-secondary" href="https://discord.gg/8GmjZnU2N9" target="_blank" rel="noopener noreferrer">Join Support Server</a>
           </div>
