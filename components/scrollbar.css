@@ -1,0 +1,29 @@
+/* Force the track to match the page background */
+::-webkit-scrollbar-track {
+  background-color: #1E2124;
+}
+
+/* Remove the arrows at top/bottom or left/right */
+::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+/* Style the thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #80AA87;
+  border-radius: 100px;
+  border: 0px solid #1e212400; /* optional spacing, invisible border */
+}
+
+/* Optional hover style */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #5C7E6B;
+}
+
+/* Firefox support */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #80AA87 #1E2124;
+}

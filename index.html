@@ -1,374 +1,324 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" class="dark scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Newsletter Bot | Story-first news for Discord</title>
-  <meta name="description" content="Newsletter Bot turns noisy feed blasts into grouped stories with source context, personal /getnews controls, and configurable server channels." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Newsletter Bot</title>
+  <meta name="description"
+    content="Newsletter Bot delivers personalized news digests to your Discord server or DMs. Stay informed with smart, customizable RSS feeds." />
   <meta property="og:title" content="Newsletter Bot" />
-  <meta property="og:description" content="Story-first news delivery for Discord communities and personal workflows." />
-  <meta property="og:type" content="website" />
+  <meta property="og:description"
+    content="Smart, customizable news digests delivered to your Discord server or inbox." />
   <meta property="og:url" content="https://newsletterbot.github.io/newslettersite/" />
+  <meta property="og:type" content="website" />
   <link rel="canonical" href="https://newsletterbot.github.io/newslettersite/" />
+  <link rel="stylesheet" href="./components/scrollbar.css" />
+
+  <!-- Tailwind Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            accent: '#80AA87',
+            'accent-dark': '#5C7E6B',
+          },
+        },
+      },
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/styles.css" />
-  <script defer src="assets/site.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .gradient-mask {
+      background: radial-gradient(circle at top right, rgba(128, 170, 135, 0.6), transparent 60%);
+    }
+  </style>
 </head>
-<body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
+
+<body class="dark:bg-[#2C2F33] dark:text-gray-100 overflow-x-hidden">
+  <!-- Floating Header -->
   <div id="site-header"></div>
+  <script>
+    fetch("components/header.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("site-header").innerHTML = html);
+  </script>
 
-  <main id="main-content">
-    <section class="hero">
-      <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-        <source src="assets/bg5.mp4" type="video/mp4" />
-      </video>
-      <div class="container hero-grid">
-        <div data-reveal>
-          <p class="eyebrow">Discord-native news workflows</p>
-          <h1>Follow stories, not link spam.</h1>
-          <p>
-            Newsletter Bot delivers grouped stories with multi-source context so communities can scan the signal quickly.
-            Use it in servers or in your personal `/getnews` flow, then tune what gets posted, where it posts, and how often it posts.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank" rel="noopener noreferrer">Add to Server</a>
-            <a class="btn btn-secondary" href="#features">Explore Features</a>
-          </div>
-          <p class="hero-notes">Default setup supports up to 3 channels per server, with presets, role pings, and per-channel posting behavior.</p>
-        </div>
+  <!-- Hero Section -->
+  <section class="relative h-screen overflow-hidden text-center py-20 px-6">
 
-        <div class="hero-visual" data-reveal>
-          <img class="hero-robot" src="assets/bot.png" alt="Newsletter Bot mascot holding newspaper and coffee" />
-          <aside class="hero-surface" aria-label="Example grouped story digest">
-            <div class="surface-head">
-              <h2 class="surface-title">Today in your server feed</h2>
-              <span class="surface-chip">Story Grouped</span>
-            </div>
+    <!-- Background Video -->
+    <video id="heroVideo" autoplay muted loop playsinline preload="auto"
+      class="absolute inset-0 w-full h-full object-cover z-0 filter grayscale opacity-100">
+      <source src="./assets/bg5.mp4" type="video/mp4">
+    </video>
 
-            <article class="story-group">
-              <div class="story-head">
-                <h3>AI chip launch: enterprise demand climbs</h3>
-                <span>5 linked sources</span>
+    <script>
+      const video = document.getElementById('heroVideo');
+      video.playbackRate = 1;
+    </script>
+
+    <!-- gradient overlay -->
+    <div class="absolute inset-0 z-0 bg-gradient-to-b from-[#365448]/80 via-[#2C2F33]/80 to-[#2C2F33]/100"></div>
+
+    <!-- Hero content -->
+    <div class="relative z-10 max-w-3xl mx-auto" data-aos="fade-up">
+      <img src="./assets/robot.png" alt="Newsletter Bot" class="mx-auto mb-6 w-80 max-w-xs sm:max-w-md h-auto" />
+
+      <h1 class="text-5xl font-extrabold mb-4 text-white">
+        Stay Informed, Effortlessly
+      </h1>
+      <p class="text-lg mb-8 text-gray-200">
+        Newsletter Bot delivers personalized, interactive news feeds right into Discord — DM or channel feeds — with
+        high levels of customizability. Choose your topics, set delivery times, and tailor your experience to fit your
+        needs.
+      </p>
+
+      <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
+        class="px-4 py-2 rounded-md text-white font-semibold transition hover:scale-105 mb-8 inline-block"
+        style="background: linear-gradient(-45deg, #80AA87 0%, #629784 100%);">
+        Add to Server
+      </a>
+
+      <!-- Read More link -->
+      <div class="mt-20 flex items-center justify-center">
+        <a href="#divider"
+          class="group relative inline-flex items-center space-x-1 font-semibold text-sm text-[#80AA87] hover:text-[#80AA87] transition">
+          <span class="relative">
+            Read More
+            <span
+              class="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-[#80AA87] transition-all duration-300 group-hover:w-full"></span>
+          </span>
+          <!-- Downward arrow icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mt-0.5" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr id="divider" class="my-12 border-t-2 border-[#80AA87] w-1/2 mx-auto" />
+
+  <!-- Features Grid -->
+  <section id="features" class="py-20 px-6 ">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-[#23272A] p-6 rounded-2xl shadow-lg" data-aos="fade-up">
+        <h3 class="text-xl font-semibold mb-2 text-white">📬 Personal DM Newsletters</h3>
+        <p class="text-gray-400">Get daily or bi-daily digests delivered privately to your inbox.</p>
+      </div>
+      <div class="bg-[#23272A] p-6 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="50">
+        <h3 class="text-xl font-semibold mb-2 text-white">📢 Live Server Feeds</h3>
+        <p class="text-gray-400">Broadcast real-time updates in your server channels with customizable layouts.</p>
+      </div>
+      <div class="bg-[#23272A] p-6 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-semibold mb-2 text-white">⚙️ User Preferences</h3>
+        <p class="text-gray-400">Tailor categories, delivery times, and filters for each user.</p>
+      </div>
+      <div class="bg-[#23272A] p-6 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="150">
+        <h3 class="text-xl font-semibold mb-2 text-white">📊 Smart Scoring</h3>
+        <p class="text-gray-400">Advanced keyword ranking surfaces only the most relevant articles.</p>
+      </div>
+      <div class="bg-[#23272A] p-6 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-semibold mb-2 text-white">🧩 Category Grouping</h3>
+        <p class="text-gray-400">Choose grouped or unified streams per channel or DM.</p>
+      </div>
+      <div class="bg-[#23272A] p-6 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="250">
+        <h3 class="text-xl font-semibold mb-2 text-white">💬 Interactive UI</h3>
+        <p class="text-gray-400">Slash commands, buttons, and dropdowns for seamless news control.</p>
+      </div>
+    </div>
+  </section>
+
+  <!--THIS IS THE EXAMPLE CAROUSEL-->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+  <section class="py-16 bg-[#1E2124] text-white bg-gradient-to-b from-[#2C2F33] to-[#1E2124]">
+    <div class="max-w-5xl mx-auto px-4" x-data="{
+      slide: 0,
+      images: [
+        { src: './assets/example1.png', caption: '📢 Channel Feed Example' },
+        { src: './assets/example2.png', caption: '📅 Scheduled DM Newsletter Format' },
+        { src: './assets/example3.png', caption: '⚙️ User Preferences Panel — Tons of Customization!' },
+        { src: './assets/example4.png', caption: '🛠️ Channel Configuration Tools' }
+      ],
+      autoplay: null,
+      startAutoPlay() {
+        this.autoplay = setInterval(() => {
+          this.slide = (this.slide + 1) % this.images.length
+        }, 15000)
+      },
+      stopAutoPlay() {
+        clearInterval(this.autoplay)
+      },
+      init() {
+        this.startAutoPlay()
+      }
+    }" x-init="init()">
+      <h2 class="text-3xl font-bold mb-6 text-center">📸 Preview the Bot in Action</h2>
+
+      <div class="relative flex items-center justify-center">
+
+        <!-- Left arrow -->
+        <button @click="slide = (slide === 0 ? images.length - 1 : slide - 1)" @mouseenter="stopAutoPlay()"
+          @mouseleave="startAutoPlay()" class="mr-4 text-white bg-accent hover:bg-accent-dark px-3 py-2 rounded-full">
+          ◀
+        </button>
+
+        <!-- Carousel -->
+        <div class="overflow-hidden rounded-xl shadow-lg w-full max-w-xl">
+          <div class="flex transition-transform duration-500 ease-in-out"
+            :style="'transform: translateX(-' + (slide * 100) + '%)'" style="width: 400%">
+            <template x-for="item in images" :key="item.src">
+              <div class="w-full flex-shrink-0 flex items-center justify-center min-h-[300px]">
+                <img :src="item.src" alt="Preview" class="max-h-[400px] w-auto object-contain" />
               </div>
-              <p>One lead summary with quick source jump-in instead of 5 separate posts across the channel.</p>
-              <div class="source-tags">
-                <span>Reuters</span>
-                <span>The Verge</span>
-                <span>TechCrunch</span>
-              </div>
-            </article>
+            </template>
+          </div>
+        </div>
 
-            <article class="story-group">
-              <div class="story-head">
-                <h3>Policy vote delayed after committee review</h3>
-                <span>3 linked sources</span>
-              </div>
-              <p>Context stays together so members can compare reporting angles without leaving Discord.</p>
-              <div class="source-tags">
-                <span>AP</span>
-                <span>BBC</span>
-                <span>Bloomberg</span>
-              </div>
-            </article>
-          </aside>
+        <!-- Right arrow -->
+        <button @click="slide = (slide + 1) % images.length" @mouseenter="stopAutoPlay()" @mouseleave="startAutoPlay()"
+          class="ml-4 text-white bg-accent hover:bg-accent-dark px-3 py-2 rounded-full">
+          ▶
+        </button>
+      </div>
+
+      <!-- Captions -->
+      <div class="text-center mt-4 text-accent text-sm font-medium min-h-[1.5rem]">
+        <template x-for="(item, index) in images" :key="item.src">
+          <span x-show="slide === index" x-transition x-text="item.caption"></span>
+        </template>
+      </div>
+
+      <!-- Dots -->
+      <div class="flex justify-center mt-4 space-x-2">
+        <template x-for="(item, index) in images" :key="index">
+          <button @click="slide = index" :class="{
+            'bg-[#80AA87]': slide === index,
+            'bg-gray-600': slide !== index
+          }" class="w-3 h-3 rounded-full focus:outline-none transition"></button>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-[#1E2124] py-6">
+    <hr class="border-t-2 border-[#80AA87] w-1/2 mx-auto" />
+  </div>
+
+  <!-- Why Choose Section -->
+  <section class="py-20 px-6 bg-[#1E2124]">
+    <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-6 text-white">Why Choose Newsletter Bot?</h2>
+      <p class="text-gray-300 mb-8">A sleek, secure, and powerful way to stay on top of current events.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
+        <div class="text-left">
+          <p class="font-semibold text-gray-100">🎯 Precision Filters</p>
+          <p class="text-gray-400">Filter by category, tags, keywords, and much more — don't worry about seeing
+            irrelevant articles.</p>
+        </div>
+        <div class="text-left">
+          <p class="font-semibold text-gray-100">🔒 Privacy First</p>
+          <p class="text-gray-400">No analytics, no profiling. We don't collect any data that doesn't need to be
+            collected.</p>
+        </div>
+        <div class="text-left">
+          <p class="font-semibold text-gray-100">🛠️ Admin Tools</p>
+          <p class="text-gray-400">We provide users full customization of their feeds, including complete formatting
+            control.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="section-divider" />
+  <div class="bg-[#1E2124] py-6">
+    <hr class="border-t-2 border-[#80AA87] w-1/2 mx-auto" />
+  </div>
 
-    <section class="section section-tight section-band-alt">
-      <div class="container" data-reveal>
-        <div class="section-head">
-          <p class="eyebrow">Core value</p>
-          <h2 class="section-title">Built beyond basic RSS forwarding</h2>
-          <p class="section-text">
-            Most bots forward every article as a separate post. Newsletter Bot organizes coverage by story, keeps source visibility intact,
-            and gives admins the controls to keep channels readable.
+  <!-- FAQ Section -->
+  <section class="py-20 px-6 bg-gradient-to-b from-[#1E2124] to-[#2C2F33]">
+    <div class="max-w-4xl mx-auto" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-12 text-center text-white">🙋‍♂️ FAQs</h2>
+      <div class="space-y-8">
+
+        <div>
+          <h4 class="font-semibold text-gray-100">Can I control my DM Newsletter?</h4>
+          <p class="text-gray-400">
+            Absolutely. You have full control over your personal DM Newsletter experience. You can choose your
+            preferred
+            delivery time (morning or evening), the number of articles, layout style (compact or detailed), and even
+            boost or filter out topics using keywords. It’s tailored to your interests—no clutter, no filler.
           </p>
         </div>
 
-        <div class="comparison" role="table" aria-label="Comparison between basic RSS forwarding and Newsletter Bot">
-          <div class="comparison-row" role="row">
-            <div class="comparison-cell comparison-head" role="columnheader">What matters</div>
-            <div class="comparison-cell comparison-head" role="columnheader">Basic forwarder</div>
-            <div class="comparison-cell comparison-head" role="columnheader">Newsletter Bot</div>
-          </div>
-          <div class="comparison-row" role="row">
-            <div class="comparison-cell comparison-title" role="cell">Story-level updates</div>
-            <div class="comparison-cell comparison-muted" role="cell">Raw article stream</div>
-            <div class="comparison-cell comparison-good" role="cell">Grouped stories with cleaner digests</div>
-          </div>
-          <div class="comparison-row" role="row">
-            <div class="comparison-cell comparison-title" role="cell">Source context</div>
-            <div class="comparison-cell comparison-muted" role="cell">Single source per post</div>
-            <div class="comparison-cell comparison-good" role="cell">Browse multiple linked sources per story</div>
-          </div>
-          <div class="comparison-row" role="row">
-            <div class="comparison-cell comparison-title" role="cell">Discord controls</div>
-            <div class="comparison-cell comparison-muted" role="cell">Few admin options</div>
-            <div class="comparison-cell comparison-good" role="cell">Presets, role pings, channel behavior tuning</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-band-dark" id="features">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <p class="eyebrow">Feature set</p>
-          <h2 class="section-title">Current bot capabilities</h2>
-          <p class="section-text">
-            The current release is designed for both community channels and personal reading. Features below reflect what the bot supports today.
+        <div>
+          <h4 class="font-semibold text-gray-100">Is my data safe?</h4>
+          <p class="text-gray-400">
+            Yes. Newsletter Bot stores only the bare minimum required to deliver your newsletter—such as your Discord
+            ID
+            and selected preferences. We never track messages, never share your data, and we do not use any
+            third-party
+            analytics. Your privacy is a core part of the bot's design.
           </p>
         </div>
 
-        <div class="grid-3">
-          <article class="card" data-reveal>
-            <h3 class="card-title">Story grouping first</h3>
-            <p>Related coverage is merged into one story thread to reduce repetitive channel spam.</p>
-          </article>
-          <article class="card" data-reveal>
-            <h3 class="card-title">Multi-source browsing</h3>
-            <p>Members can move across sources for the same story and compare reporting perspectives.</p>
-          </article>
-          <article class="card" data-reveal>
-            <h3 class="card-title">Server channels by default</h3>
-            <p>Configure up to 3 channels per server on default setup, each with its own focus.</p>
-          </article>
-          <article class="card" data-reveal>
-            <h3 class="card-title">Presets for faster setup</h3>
-            <p>Apply channel presets to launch quickly, then fine tune cadence and formatting.</p>
-          </article>
-          <article class="card" data-reveal>
-            <h3 class="card-title">Role pings with control</h3>
-            <p>Attach role notifications where needed so relevant teams see critical story updates.</p>
-          </article>
-          <article class="card" data-reveal>
-            <h3 class="card-title">Personal `/getnews` flow</h3>
-            <p>Run personal pulls, then shape your feed with preference controls instead of one-size-fits-all output.</p>
-          </article>
-          <article class="card" data-reveal>
-            <h3 class="card-title">Custom feed additions</h3>
-            <p>Discover and add feed sources that match your niche domains and community priorities.</p>
-          </article>
-          <article class="card" data-reveal>
-            <h3 class="card-title">Owner-side curation tools</h3>
-            <p>Review feed health, clean naming, and curate source quality to keep output trustworthy.</p>
-          </article>
-          <article class="card" data-reveal>
-            <h3 class="card-title">Smarter ranking signals</h3>
-            <p>Background ranking and organization improve ordering quality without making opaque AI promises.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-band-alt" id="workflow">
-      <div class="container split-panel">
-        <div data-reveal>
-          <div class="section-head">
-            <p class="eyebrow">Story-centric flow</p>
-            <h2 class="section-title">More signal, less noise in every channel</h2>
-            <p class="section-text">
-              The bot groups overlapping coverage into story-level updates, then keeps source visibility clear.
-              Your community sees one focused post instead of a flood of duplicate links.
-            </p>
-          </div>
-          <ul class="step-list">
-            <li class="step-item">
-              <strong>1. Ingest + normalize</strong>
-              <p>Feeds are cleaned and source names are normalized for clearer browsing and moderation.</p>
-            </li>
-            <li class="step-item">
-              <strong>2. Group by story</strong>
-              <p>Related articles are clustered so updates stay organized around events, not URLs.</p>
-            </li>
-            <li class="step-item">
-              <strong>3. Rank + post with rules</strong>
-              <p>Stories are ordered with structured ranking signals, then posted by channel rules and presets.</p>
-            </li>
-          </ul>
-        </div>
-
-        <div class="card" data-reveal>
-          <h3 class="card-title">Channel outcomes</h3>
-          <p>Admins get tighter feeds while members still get source choice and context depth.</p>
-          <div class="metric-strip mt-1">
-            <div class="metric">
-              <strong>3</strong>
-              <span>default channels per server</span>
-            </div>
-            <div class="metric">
-              <strong>1 post</strong>
-              <span>per grouped story update</span>
-            </div>
-            <div class="metric">
-              <strong>Multi-source</strong>
-              <span>context preserved in Discord</span>
-            </div>
-          </div>
-          <ul class="list-clean mt-1">
-            <li>Cleaner feed naming and source management</li>
-            <li>Posting behavior scoped per channel</li>
-            <li>Role ping support when relevance is critical</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-band-dark" id="server-tools">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <p class="eyebrow">Server-first controls</p>
-          <h2 class="section-title">Built for moderators and operators</h2>
-          <p class="section-text">
-            Give each channel a purpose. Use presets for quick rollout, then tune frequency, source scope, and role pings to match each audience.
+        <div>
+          <h4 class="font-semibold text-gray-100">What sources are available?</h4>
+          <p class="text-gray-400">
+            We aggregate news from a broad range of global and regional outlets—covering U.S. and international
+            politics, technology, science, entertainment, sports, and more. You can mix and match sources across
+            categories, or subscribe to curated feeds that reflect your specific interests and region.
           </p>
         </div>
 
-        <div class="grid-2">
-          <article class="card" data-reveal>
-            <h3 class="card-title">Channel presets and behavior</h3>
-            <p>Start with curated presets, then customize grouping style, posting frequency, and source scope per channel.</p>
-          </article>
-          <article class="card" data-reveal>
-            <h3 class="card-title">Role-aware distribution</h3>
-            <p>Use role pings intentionally so high-priority updates land with the right teams.</p>
-          </article>
-          <article class="card" data-reveal>
-            <h3 class="card-title">Source naming and management</h3>
-            <p>Cleaner source labels and management tools make feeds easier to trust and audit.</p>
-          </article>
-          <article class="card" data-reveal>
-            <h3 class="card-title">Owner curation workflow</h3>
-            <p>Review feed health and quality, then keep weak or noisy sources out of production channels.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-band-alt" id="personal">
-      <div class="container split-panel">
-        <div class="card" data-reveal>
-          <h3 class="card-title">Personal news with `/getnews`</h3>
-          <p>
-            Pull stories on demand, then refine your own preferences. Personal usage is built for readers who want control
-            without creating server-wide noise.
-          </p>
-          <ul class="list-clean mt-09">
-            <li>Preference-driven results tuned to your interests</li>
-            <li>Custom feed discovery and additions</li>
-            <li>Source-aware browsing without leaving Discord</li>
-          </ul>
-        </div>
-
-        <div data-reveal>
-          <div class="section-head">
-            <p class="eyebrow">Personal mode</p>
-            <h2 class="section-title">One bot, two strong use cases</h2>
-            <p class="section-text">
-              You can run Newsletter Bot as a server news system and still use it personally for focused story pulls.
-              That keeps personal reading flexible while server channels stay structured.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-band-dark">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <p class="eyebrow">Preview</p>
-          <h2 class="section-title">Interface snapshots</h2>
-          <p class="section-text">
-            Existing command and feed surfaces from the current bot, presented in a cleaner, story-first workflow.
+        <div>
+          <h4 class="font-semibold text-gray-100">Can I suggest new features?</h4>
+          <p class="text-gray-400">
+            Yes! We actively maintain a public roadmap and welcome all suggestions. If there’s a feature, feed, or
+            formatting idea you'd like to see, you can submit it directly through our Discord Support Server. We
+            prioritize user feedback and often build new tools based on community input.
           </p>
         </div>
 
-        <div class="gallery">
-          <figure class="gallery-item" data-reveal>
-            <img src="assets/example1.png" alt="Server news channel showing grouped story updates" loading="lazy" />
-            <figcaption class="gallery-caption">
-              <strong>Server stream layout</strong>
-              <span>Grouped updates with less channel clutter</span>
-            </figcaption>
-          </figure>
-          <figure class="gallery-item" data-reveal>
-            <img src="assets/example2.png" alt="Personal digest format in Discord" loading="lazy" />
-            <figcaption class="gallery-caption">
-              <strong>Personal digest format</strong>
-              <span>Story summaries built for quick scans</span>
-            </figcaption>
-          </figure>
-          <figure class="gallery-item" data-reveal>
-            <img src="assets/example3.png" alt="Preference controls for story and source behavior" loading="lazy" />
-            <figcaption class="gallery-caption">
-              <strong>Preference controls</strong>
-              <span>Adjust topics, source scope, and behavior</span>
-            </figcaption>
-          </figure>
-          <figure class="gallery-item" data-reveal>
-            <img src="assets/example4.png" alt="Server channel configuration interface" loading="lazy" />
-            <figcaption class="gallery-caption">
-              <strong>Channel configuration</strong>
-              <span>Server-ready setup with channel-specific rules</span>
-            </figcaption>
-          </figure>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="section-divider" />
 
-    <section class="section section-tight section-band-alt" id="faq">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <p class="eyebrow">FAQ</p>
-          <h2 class="section-title">Questions teams ask before launch</h2>
-        </div>
+  <section class="bg-gradient-to-r from-[#1E2124] to-[#1E2124] text-white py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4">✅ Ready to try it out?</h2>
+    <p class="mb-6">Invite Newsletter Bot to your server and start getting better news today.</p>
+    <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
+      class="px-4 py-2 rounded-md text-white font-semibold transition hover:scale-105"
+      style="background: linear-gradient(-45deg, #80AA87 0%, #629784 100%);">
+      Add to Server
+    </a>
+  </section>
 
-        <div class="faq-list">
-          <details class="faq-item" data-reveal>
-            <summary>How is this different from an RSS bot?</summary>
-            <p>It groups related articles into stories and keeps multi-source context together, so channels stay readable.</p>
-          </details>
-          <details class="faq-item" data-reveal>
-            <summary>Can I separate topics by channel?</summary>
-            <p>Yes. Default server setup supports up to 3 channels, and each channel can have independent behavior and presets.</p>
-          </details>
-          <details class="faq-item" data-reveal>
-            <summary>Do users have personal controls too?</summary>
-            <p>Yes. `/getnews` and preference controls let individuals run personalized pulls without affecting server defaults.</p>
-          </details>
-          <details class="faq-item" data-reveal>
-            <summary>Are custom feeds supported?</summary>
-            <p>Yes. You can add custom feeds and use owner-side curation tools to monitor feed health and quality.</p>
-          </details>
-        </div>
-      </div>
-    </section>
 
-    <section class="section section-tight section-band-dark">
-      <div class="container">
-        <div class="cta-shell" data-reveal>
-          <h2>Ship a cleaner news experience in your Discord today.</h2>
-          <p>
-            Replace noisy link drops with grouped stories, source context, and configurable posting workflows built for real communities.
-          </p>
-          <div class="hero-actions actions-center">
-            <a class="btn btn-primary" href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank" rel="noopener noreferrer">Add Newsletter Bot</a>
-            <a class="btn btn-secondary" href="https://discord.gg/8GmjZnU2N9" target="_blank" rel="noopener noreferrer">Join Support Server</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
+  <!-- Footer -->
   <div id="site-footer"></div>
+  <script>
+    fetch("components/footer.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("site-footer").innerHTML = html);
+  </script>
+
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
 </body>
+
 </html>

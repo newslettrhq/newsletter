@@ -1,40 +1,57 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" class="dark scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>404 | Newsletter Bot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 – Page Not Found | Newsletter Bot</title>
   <meta name="robots" content="noindex" />
-  <meta name="description" content="Page not found." />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/styles.css" />
-  <script defer src="assets/site.js"></script>
+  <link rel="stylesheet" href="./components/scrollbar.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            accent: '#80AA87',
+            'accent-dark': '#5C7E6B',
+          },
+        },
+      },
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
 </head>
-<body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-  <div id="site-header"></div>
 
-  <main id="main-content" class="not-found">
-    <div class="container">
-      <section class="not-found-card" data-reveal>
-        <img class="not-found-robot" src="assets/robot_confused.png" alt="Confused Newsletter Bot mascot" />
-        <p class="not-found-code">404</p>
-        <h1>This page is not available.</h1>
-        <p>
-          The link may be outdated or the route may have changed during the site refresh.
-          Use the main product page to continue.
-        </p>
-        <div class="not-found-actions">
-          <a class="btn btn-primary" href="index.html">Go to Homepage</a>
-          <a class="btn btn-secondary" href="https://discord.gg/8GmjZnU2N9" target="_blank" rel="noopener noreferrer">Get Support</a>
-        </div>
-      </section>
-    </div>
-  </main>
+<body class="dark:bg-[#2C2F33] dark:text-gray-100 overflow-x-hidden">
+  <div class="min-h-screen flex flex-col justify-center items-center text-center px-6 py-20" data-aos="fade-up">
 
-  <div id="site-footer"></div>
+    <img src="./assets/robot_confused.png" alt="Lost Robot" class="w-40 h-auto mb-8" />
+
+    <h1 class="text-6xl font-extrabold text-accent mb-4">404</h1>
+    <p class="text-xl text-gray-300 mb-6">Oops! This page doesn’t exist.</p>
+    <p class="text-gray-400 mb-10 max-w-md">
+      The URL might be broken or the page may have been removed. Let’s get you back on track.
+    </p>
+
+    <a href="./index.html"
+      class="px-6 py-4 rounded-xl text-white font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+      style="background: linear-gradient(-45deg, #80AA87 0%, #629784 100%);">
+      ← Back to Home
+    </a>
+  </div>
+
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
 </body>
+
 </html>

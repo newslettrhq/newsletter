@@ -1,39 +1,59 @@
-<header class="site-header">
-  <div class="container nav-wrapper">
-    <a class="brand" href="index.html" aria-label="Newsletter Bot home">
-      <span class="brand-mark" aria-hidden="true"><img src="assets/favicon.png" alt="" /></span>
-      <span class="brand-text">Newsletter Bot</span>
+<header class="fixed top-0 left-0 w-full bg-[#1E2124] text-white shadow-sm z-50 border-t-4 border-[#80AA87]" x-data="{ open: false }">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+
+    <!-- Left: Logo -->
+    <a href="index.html" class="flex items-center space-x-2 font-bold text-lg tracking-tight hover:opacity-90">
+      <span class="text-2xl">📰</span>
+      <span class="text-white">Newsletter Bot</span>
     </a>
 
-    <nav class="desktop-nav" aria-label="Primary">
-      <a class="nav-link" data-nav-link href="index.html">Home</a>
-      <a class="nav-link" href="index.html#features">Features</a>
-      <a class="nav-link" href="index.html#workflow">How It Works</a>
-      <a class="nav-link" data-nav-link href="privacy.html">Privacy</a>
-      <a class="nav-link" data-nav-link href="terms.html">Terms</a>
-    </nav>
+    <!-- Right: Desktop Nav -->
+    <div class="hidden sm:flex items-center space-x-4">
+      <nav class="flex items-center space-x-6 text-sm font-medium text-white/90">
+        <a href="index.html" class="group relative hover:text-white transition">
+          <span>Home</span>
+          <span class="absolute left-0 -bottom-0.5 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="privacy.html" class="group relative hover:text-white transition">
+          <span>Privacy</span>
+          <span class="absolute left-0 -bottom-0.5 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="terms.html" class="group relative hover:text-white transition">
+          <span>Terms</span>
+          <span class="absolute left-0 -bottom-0.5 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="https://discord.gg/8GmjZnU2N9" target="_blank" class="group relative hover:text-white transition">
+          <span>Support</span>
+          <span class="absolute left-0 -bottom-0.5 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </nav>
 
-    <div class="nav-actions">
-      <a class="btn btn-secondary btn-compact" href="https://discord.gg/8GmjZnU2N9" target="_blank" rel="noopener noreferrer">Support</a>
-      <a class="btn btn-primary btn-compact" href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank" rel="noopener noreferrer">Add to Server</a>
+      <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
+        class="px-4 py-2 rounded-md text-white font-semibold transition hover:scale-105"
+        style="background: linear-gradient(-45deg, #80AA87 0%, #629784 100%);">
+        Add to Server
+      </a>
     </div>
 
-    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-nav-panel" data-nav-toggle>
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+    <!-- Mobile Menu Button -->
+    <button @click="open = !open" class="sm:hidden focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        <path x-show="open" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
   </div>
 
-  <div class="mobile-nav" id="mobile-nav-panel" data-nav-menu>
-    <div class="mobile-nav-inner">
-      <a class="nav-link" data-nav-link href="index.html">Home</a>
-      <a class="nav-link" href="index.html#features">Features</a>
-      <a class="nav-link" href="index.html#workflow">How It Works</a>
-      <a class="nav-link" data-nav-link href="privacy.html">Privacy</a>
-      <a class="nav-link" data-nav-link href="terms.html">Terms</a>
-      <a class="btn btn-secondary btn-compact" href="https://discord.gg/8GmjZnU2N9" target="_blank" rel="noopener noreferrer">Support</a>
-      <a class="btn btn-primary btn-compact" href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank" rel="noopener noreferrer">Add to Server</a>
-    </div>
+  <!-- Mobile Menu Dropdown -->
+  <div x-show="open" class="sm:hidden bg-[#1E2124] border-t border-[#80AA87] px-6 pb-4 space-y-4 text-sm font-medium text-white/90">
+    <a href="index.html" class="block hover:text-white">Home</a>
+    <a href="privacy.html" class="block hover:text-white">Privacy</a>
+    <a href="terms.html" class="block hover:text-white">Terms</a>
+    <a href="https://discord.gg/8GmjZnU2N9" target="_blank" class="block hover:text-white">Support</a>
+    <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
+      class="block w-full text-center px-4 py-2 rounded-md text-white font-semibold transition hover:scale-105"
+      style="background: linear-gradient(-45deg, #80AA87 0%, #629784 100%);">
+      Add to Server
+    </a>
   </div>
 </header>
