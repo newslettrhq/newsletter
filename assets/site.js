@@ -30,12 +30,25 @@
 
   function setActiveNav() {
     const currentPage = getCurrentPage();
+    const currentHash = window.location.hash;
     const links = document.querySelectorAll("[data-nav-link]");
 
     links.forEach(function (link) {
+      link.classList.remove("is-active");
+      link.removeAttribute("aria-current");
+
       const href = link.getAttribute("href") || "";
       const baseHref = href.split("#")[0] || "index.html";
-      const isActive = baseHref === currentPage;
+      const hashPart = href.includes("#") ? "#" + href.split("#")[1] : "";
+      let isActive = false;
+
+      if (baseHref !== currentPage) {
+        isActive = false;
+      } else if (!hashPart) {
+        isActive = currentHash === "";
+      } else {
+        isActive = currentHash === hashPart;
+      }
 
       if (isActive) {
         link.classList.add("is-active");
@@ -109,6 +122,7 @@
     setActiveNav();
     initMobileNav();
     setYear();
+    window.addEventListener("hashchange", setActiveNav);
   }
 
   document.addEventListener("DOMContentLoaded", function () {

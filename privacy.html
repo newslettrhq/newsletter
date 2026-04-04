@@ -1,153 +1,118 @@
 <!DOCTYPE html>
-<html lang="en-US" class="dark scroll-smooth">
-
+<html lang="en-US">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy | Newsletter Bot</title>
-  <meta name="description" content="How Newsletter Bot handles data, privacy, and user rights.">
+  <meta name="description" content="Privacy Policy for Newsletter Bot on Discord, including data collection, usage, retention, and user rights." />
   <link rel="canonical" href="https://newsletterbot.github.io/newslettersite/privacy.html" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
-
-  <!-- Scrollbar and Tailwind Config -->
-  <link rel="stylesheet" href="/components/scrollbar.css" />
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            accent: '#80AA87',
-            'accent-dark': '#5C7E6B',
-          },
-        },
-      },
-    }
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="./components/scrollbar.css" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-  </style>
+  <link rel="stylesheet" href="components/scrollbar.css" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <script defer src="assets/site.js"></script>
 </head>
-
-<body class="dark:bg-[#2C2F33] dark:text-gray-100 overflow-x-hidden">
-  <!-- Floating Header -->
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div id="site-header"></div>
-  <script>
-    fetch("components/header.html")
-      .then(res => res.text())
-      .then(html => document.getElementById("site-header").innerHTML = html);
-  </script>
 
-  <!-- Privacy Policy Content -->
-  <main class="max-w-4xl mx-auto pt-28 pb-20 px-6">
-    <section class="text-center mb-12" data-aos="fade-down">
-      <img src="./assets/robot_privacypolicy.png" alt="Robot with coffee and newspaper" class="mx-auto mb-6 w-32 sm:w-40 md:w-48" />
-      <h1 class="text-4xl font-bold text-accent">Privacy Policy</h1>
-      <p class="mt-2 text-lg text-gray-300">Effective Date: May 15, 2025</p>
-    </section>
+  <main id="main-content" class="legal-main">
+    <div class="container">
+      <section class="legal-hero" data-reveal>
+        <div class="legal-hero-wrap">
+          <div>
+            <p class="legal-kicker">Newsletter Bot Legal</p>
+            <h1 class="legal-title">Privacy Policy</h1>
+            <p class="legal-subtext">
+              Last updated: April 4, 2026. This policy explains what Newsletter Bot stores, why it is needed,
+              and how users and server owners can request changes or deletion.
+            </p>
+          </div>
+          <img class="legal-hero-image" src="assets/robot_privacypolicy.png" alt="Newsletter Bot privacy illustration" />
+        </div>
+      </section>
 
-    <section class="mb-12" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-accent mb-4">Overview</h2>
-      <p class="text-gray-300">
-        Newsletter Bot respects your privacy. This policy outlines what we collect, how it's used, and your rights. It
-        applies to all users of the bot on Discord.
+      <section class="legal-grid">
+        <article class="legal-card" data-reveal>
+          <h2>1. Scope</h2>
+          <p>
+            This policy applies to Newsletter Bot use in Discord servers and direct interactions with bot commands.
+            It does not apply to Discord itself or third-party websites linked in posted news stories.
+          </p>
+        </article>
+
+        <article class="legal-card" data-reveal>
+          <h2>2. Data We Store</h2>
+          <ul class="legal-list">
+            <li>Discord user IDs, server IDs, channel IDs, and role IDs needed for bot features.</li>
+            <li>Server channel configuration, presets, feed choices, and delivery preferences.</li>
+            <li>User-level preferences for commands such as <code>/getnews</code> and personal feed behavior.</li>
+            <li>Feed metadata required for curation, source cleanup, and feed health workflows.</li>
+          </ul>
+        </article>
+
+        <article class="legal-card" data-reveal>
+          <h2>3. Data We Do Not Store</h2>
+          <ul class="legal-list">
+            <li>We do not store the content of your Discord messages.</li>
+            <li>We do not collect passwords, payment details, or direct contact profiles from Discord users.</li>
+            <li>We do not run third-party ad tracking or behavioral profiling systems.</li>
+          </ul>
+        </article>
+
+        <article class="legal-card" data-reveal>
+          <h2>4. Why Data Is Used</h2>
+          <p>
+            Stored data is used only to operate the bot: posting grouped stories, applying channel rules, supporting role pings,
+            powering user preferences, and maintaining source quality controls.
+          </p>
+        </article>
+
+        <article class="legal-card" data-reveal>
+          <h2>5. Retention And Deletion</h2>
+          <p>
+            Data is retained while the bot is actively used. Removing the bot from a server or requesting deletion through support
+            starts the cleanup process for associated configuration records.
+          </p>
+          <p>
+            Some technical logs may be retained briefly for reliability and abuse prevention, then removed on normal rotation.
+          </p>
+        </article>
+
+        <article class="legal-card" data-reveal>
+          <h2>6. Access And Security</h2>
+          <p>
+            Access to stored bot data is restricted to authorized maintainers for operations and debugging. Reasonable security controls are used
+            to protect bot systems, but no service can guarantee absolute security.
+          </p>
+        </article>
+
+        <article class="legal-card" data-reveal>
+          <h2>7. Your Choices</h2>
+          <ul class="legal-list">
+            <li>Request a summary of stored bot-related records linked to your usage.</li>
+            <li>Request deletion of user-level preferences where technically feasible.</li>
+            <li>Remove the bot from a server to stop future processing in that server context.</li>
+          </ul>
+        </article>
+
+        <article class="legal-card" data-reveal>
+          <h2>8. Policy Updates</h2>
+          <p>
+            This policy may be updated as product features evolve. Material changes will be reflected on this page with an updated date.
+          </p>
+        </article>
+      </section>
+
+      <p class="notice" data-reveal>
+        <strong>Questions?</strong> Join the <a href="https://discord.gg/8GmjZnU2N9" target="_blank" rel="noopener noreferrer">support server</a>
+        for privacy requests or policy clarifications.
       </p>
-    </section>
-
-    <section class="mb-12" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-accent mb-4">Information We Collect</h2>
-      <ul class="list-disc pl-6 space-y-2 text-gray-300">
-        <li><strong>Discord User ID:</strong> Used to securely associate your preferences.</li>
-        <li><strong>Server & Channel IDs:</strong> Stored to configure your feed setup.</li>
-        <li><strong>Preferences & Settings:</strong> Categories, delivery time, format, keyword scoring, etc.</li>
-        <li><strong>Timezone:</strong> Provided manually for scheduling. Not auto-detected.</li>
-      </ul>
-    </section>
-
-    <section class="mb-12" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-accent mb-4">How We Use Your Data</h2>
-      <p class="text-gray-300">
-        We use your data exclusively to deliver personalized news. We do not use it for ads, analytics, or tracking.
-      </p>
-    </section>
-
-    <section class="mb-12" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-accent mb-4">What We Do <em>Not</em> Collect</h2>
-      <ul class="list-disc pl-6 space-y-2 text-gray-300">
-        <li>No message content is ever logged.</li>
-        <li>No IP addresses, email, or device data collected.</li>
-        <li>No ephemeral interaction data is stored beyond runtime.</li>
-        <li>No third-party analytics or tracking libraries used.</li>
-      </ul>
-    </section>
-
-    <section class="mb-12" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-accent mb-4">Data Retention</h2>
-      <p class="text-gray-300">
-        We only retain your data while your account/server uses the bot. If you remove the bot, your data is purged.
-      </p>
-    </section>
-
-    <section class="mb-12" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-accent mb-4">Data Access and Sharing</h2>
-      <p class="text-gray-300">
-        Your data is only accessible to the developer for debugging. It is never sold, shared, or transferred to third
-        parties.
-      </p>
-    </section>
-
-    <section class="mb-12" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-accent mb-4">Security</h2>
-      <p class="text-gray-300">
-        We use modern best practices, including encrypted storage where applicable and strict credential control.
-        Regular monitoring is in place.
-      </p>
-    </section>
-
-    <section class="mb-12" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-accent mb-4">Your Rights</h2>
-      <ul class="list-disc pl-6 space-y-2 text-gray-300">
-        <li>You may request a copy of your data.</li>
-        <li>You may request deletion at any time.</li>
-        <li>You may reset or purge your data by removing the bot or issuing a reset command.</li>
-      </ul>
-    </section>
-
-    <section class="mb-12" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-accent mb-4">Changes to This Policy</h2>
-      <p class="text-gray-300">
-        We may revise this policy as the bot evolves. Major changes will be announced in our support server or posted
-        here.
-      </p>
-    </section>
-
-    <div class="text-center mt-16">
-      <a href="index.html"
-        class="inline-block px-6 py-4 rounded-xl text-white font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-        style="background: linear-gradient(-45deg, #80AA87 0%, #629784 100%);">
-        ← Back to Home
-      </a>
     </div>
   </main>
 
-  <!-- Footer -->
   <div id="site-footer"></div>
-  <script>
-    fetch("components/footer.html")
-      .then(res => res.text())
-      .then(html => document.getElementById("site-footer").innerHTML = html);
-  </script>
-
-  <script>
-    AOS.init({ duration: 800, once: true });
-  </script>
 </body>
-
 </html>
