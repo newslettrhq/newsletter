@@ -241,18 +241,27 @@ main {
 
 .section {
   padding: 4.6rem 0;
+  position: relative;
 }
 
 .section-tight {
   padding: 3.5rem 0;
 }
 
+.section + .section {
+  border-top: 1px solid rgba(128, 170, 135, 0.12);
+}
+
 .section-band-dark {
-  background: rgba(30, 33, 36, 0.72);
+  background: rgba(25, 29, 31, 0.44);
 }
 
 .section-band-alt {
-  background: rgba(36, 40, 43, 0.82);
+  background: rgba(33, 37, 40, 0.3);
+}
+
+.section-band-soft {
+  background: rgba(42, 47, 50, 0.2);
 }
 
 .section-divider {
@@ -739,9 +748,7 @@ main {
 .cta-shell {
   border: 1px solid rgba(128, 170, 135, 0.42);
   border-radius: var(--radius-lg);
-  background:
-    radial-gradient(circle at 16% 16%, rgba(128, 170, 135, 0.22), transparent 34%),
-    linear-gradient(160deg, rgba(56, 75, 65, 0.72) 0%, rgba(35, 39, 42, 0.96) 60%);
+  background: linear-gradient(160deg, rgba(56, 75, 65, 0.56) 0%, rgba(35, 39, 42, 0.94) 62%);
   box-shadow: var(--shadow-lg);
   padding: 2rem;
   text-align: center;

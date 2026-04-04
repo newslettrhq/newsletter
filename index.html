@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Newsletter Bot | Story-First News For Discord</title>
-  <meta name="description" content="Newsletter Bot delivers grouped, source-aware stories to Discord servers and users with flexible channel controls, role pings, presets, and personal news preferences." />
+  <meta name="description" content="Newsletter Bot delivers grouped, source-aware news stories to Discord servers with channel controls, presets, role pings, and custom feed support." />
   <meta property="og:title" content="Newsletter Bot | Story-First News For Discord" />
   <meta property="og:description" content="Modern Discord news delivery with grouped stories, cleaner channels, and smart server customization." />
   <meta property="og:url" content="https://newsletterbot.github.io/newslettersite/" />
@@ -40,7 +40,7 @@
             <a class="btn btn-primary" href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank" rel="noopener noreferrer">Add To Server</a>
             <a class="btn btn-secondary" href="https://discord.gg/8GmjZnU2N9" target="_blank" rel="noopener noreferrer">Join Support Server</a>
           </div>
-          <p class="hero-notes">Up to 3 server channels by default, role pings, presets, personal <code>/getnews</code>, and custom feed support.</p>
+          <p class="hero-notes">Up to 3 server news channels by default, with per-channel presets, role pings, feed selection, and delivery tuning.</p>
         </div>
 
         <div class="hero-visual" data-reveal>
@@ -89,7 +89,7 @@
             <span class="eyebrow">What It Does</span>
             <h2 class="section-title">Turn noisy feed traffic into clear, organized updates.</h2>
             <p class="section-text">
-              Newsletter Bot is built for Discord-first communities. It watches curated news feeds, groups related articles into story clusters,
+              Newsletter Bot is built for Discord-first communities. It ingests selected category feeds and custom RSS feeds, groups related coverage into story clusters,
               and posts in a cleaner format that is easier to skim, follow, and discuss.
             </p>
           </div>
@@ -103,8 +103,8 @@
         <article class="card" data-reveal>
           <h3 class="card-title">Built For Real Community Use</h3>
           <p>
-            Configure server channels, role pings, summaries, and presets for faster setup. Users can also run <code>/getnews</code>,
-            save personal preferences, and follow custom feeds without changing server defaults.
+            Server owners can set up channel-by-channel categories, source mixes, ping behavior, and posting strictness.
+            Readers get grouped stories that are easier to follow in active channels.
           </p>
           <img class="section-robot mt-1" src="assets/robot_features.png" alt="Feature-focused Newsletter Bot robot illustration" />
         </article>
@@ -138,12 +138,12 @@
           <div class="comparison-row">
             <div class="comparison-cell comparison-title">Server Control</div>
             <div class="comparison-cell comparison-muted">Single stream, limited tuning</div>
-            <div class="comparison-cell comparison-good">Channel presets, pings, and behavior tuning</div>
+            <div class="comparison-cell comparison-good">Up to 3 channels with presets, pings, and per-channel tuning</div>
           </div>
           <div class="comparison-row">
-            <div class="comparison-cell comparison-title">Personal Experience</div>
+            <div class="comparison-cell comparison-title">Reader Experience</div>
             <div class="comparison-cell comparison-muted">Usually none</div>
-            <div class="comparison-cell comparison-good">Personal <code>/getnews</code>, preferences, and custom feeds</div>
+            <div class="comparison-cell comparison-good">Grouped stories with multi-source browsing and less repeat spam</div>
           </div>
         </div>
       </div>
@@ -153,7 +153,7 @@
       <div class="container">
         <div class="section-head" data-reveal>
           <span class="eyebrow">Core Feature Set</span>
-          <h2 class="section-title">Current capabilities, built for modern Discord workflows.</h2>
+          <h2 class="section-title">Practical tools for server owners and cleaner reading for members.</h2>
         </div>
 
         <div class="grid-3">
@@ -170,34 +170,34 @@
             <p>Run separate server news channels for different audiences or topics with independent behavior settings.</p>
           </article>
           <article class="card" data-reveal>
+            <h3 class="card-title">Per-Channel Source And Category Mix</h3>
+            <p>Set different category and source combinations in each channel so every audience gets the right feed.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3 class="card-title">Channel Strictness Tuning</h3>
+            <p>Adjust how selective each channel feels so high-volume rooms stay focused while broader rooms stay active.</p>
+          </article>
+          <article class="card" data-reveal>
             <h3 class="card-title">Role Ping Controls</h3>
-            <p>Attach story updates to role mentions when needed, while keeping optional categories quiet by default.</p>
+            <p>Enable optional role pings per channel with configurable behavior designed to reduce unnecessary ping noise.</p>
           </article>
           <article class="card" data-reveal>
-            <h3 class="card-title">Preset-Based Setup</h3>
-            <p>Use preset bundles to launch quickly, then fine-tune channels without rebuilding everything from scratch.</p>
+            <h3 class="card-title">Channel Presets</h3>
+            <p>Start from sensible preset configurations, then customize details without rebuilding your setup from scratch.</p>
           </article>
           <article class="card" data-reveal>
-            <h3 class="card-title">Personal <code>/getnews</code></h3>
-            <p>Users can pull a personal story digest on demand and keep preferences separate from server-wide settings.</p>
+            <h3 class="card-title">Built-In And Custom RSS Feeds</h3>
+            <p>Combine built-in category feeds with custom RSS feeds so channels can cover both broad and niche topics.</p>
           </article>
           <article class="card" data-reveal>
-            <h3 class="card-title">Custom Feed Support</h3>
-            <p>Add and follow specific feeds that matter to your server, niche community, or moderation team workflow.</p>
-          </article>
-          <article class="card" data-reveal>
-            <h3 class="card-title">Owner Curation Tools</h3>
-            <p>Manage source cleanup, title overrides, and feed quality to keep daily delivery consistent and trustworthy.</p>
-          </article>
-          <article class="card" data-reveal>
-            <h3 class="card-title">Feed Health Review</h3>
-            <p>Review feed behavior and source quality over time so channels stay clean as upstream sources change.</p>
+            <h3 class="card-title">Cleaner Structured Delivery</h3>
+            <p>Stories are presented in a more coherent format so members can scan updates quickly and discuss one topic at a time.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-band-alt" id="stories">
+    <section class="section section-band-soft" id="stories">
       <div class="container split-panel">
         <article class="card" data-reveal>
           <h2 class="card-title">How Story Grouping Works</h2>
@@ -273,60 +273,49 @@
       </div>
     </section>
 
-    <section class="section section-band-dark" id="personal">
+    <section class="section" id="reader-value">
       <div class="container split-panel">
         <div data-reveal>
           <div class="section-head">
-            <span class="eyebrow">Personal Flow</span>
-            <h2 class="section-title">Users keep their own preferences without disrupting server defaults.</h2>
+            <span class="eyebrow">Reader Value</span>
+            <h2 class="section-title">Members get cleaner updates without changing anything.</h2>
             <p class="section-text">
-              Members can request updates with <code>/getnews</code>, maintain personal topic preferences, and subscribe to custom feeds
-              while server channel settings remain stable.
+              Once channels are configured by server owners, members get story-grouped coverage with fewer near-duplicate posts
+              and clearer source context inside Discord.
             </p>
           </div>
           <ul class="list-clean">
-            <li>On-demand story pulls in Discord when users want a quick update.</li>
-            <li>Personal preference storage for categories and source behavior.</li>
-            <li>Custom feed follow support for niche subjects and local reporting.</li>
+            <li>Related coverage appears under one story instead of repeated headline bursts.</li>
+            <li>Readers can browse alternate source coverage for the same event.</li>
+            <li>Cleaner channel structure makes discussion threads easier to follow.</li>
           </ul>
         </div>
 
         <article class="card" data-reveal>
-          <h3 class="card-title">Personal News Should Stay Personal</h3>
+          <h3 class="card-title">Built For Busy Discord Channels</h3>
           <p>
-            Server admins keep structure, while individual users still get control. This split model keeps channels clean and gives every member
-            a path to tailored updates.
+            Server owners control setup and delivery behavior, while members benefit from organized story posts that stay readable
+            even in high-traffic communities.
           </p>
           <img class="section-robot mt-1" src="assets/robot_help.png" alt="Newsletter Bot helper illustration" />
         </article>
       </div>
     </section>
 
-    <section class="section" id="curation">
+    <section class="section section-band-dark section-tight" id="quality">
       <div class="container">
         <div class="section-head" data-reveal>
-          <span class="eyebrow">Curation And Quality</span>
-          <h2 class="section-title">Owner-side tooling keeps feeds healthy over time.</h2>
+          <span class="eyebrow">Behind The Scenes</span>
+          <h2 class="section-title">Sources are maintained for cleaner daily delivery.</h2>
           <p class="section-text">
-            The bot includes practical curation controls for source cleanup, title overrides, and review of feed quality signals.
-            This keeps long-running servers from drifting into noisy or low-value feed behavior.
+            Feed and source organization is actively maintained behind the scenes so server channels stay readable,
+            source names stay consistent, and grouped stories remain clear over time.
           </p>
-        </div>
-
-        <div class="grid-2">
-          <article class="card" data-reveal>
-            <h3 class="card-title">Source Cleanup</h3>
-            <p>Rename messy source labels, remove weak sources, and keep story presentation consistent for members.</p>
-          </article>
-          <article class="card" data-reveal>
-            <h3 class="card-title">Feed Review Workflow</h3>
-            <p>Monitor source reliability and feed health so channels continue to surface useful stories first.</p>
-          </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-band-alt" id="showcase">
+    <section class="section" id="showcase">
       <div class="container">
         <div class="section-head" data-reveal>
           <span class="eyebrow">Product Showcase</span>
@@ -342,17 +331,17 @@
             </figcaption>
           </figure>
           <figure class="gallery-item" data-reveal>
-            <img src="assets/example2.png" alt="Personal digest example" loading="lazy" />
+            <img src="assets/example2.png" alt="Grouped story update example" loading="lazy" />
             <figcaption class="gallery-caption">
-              <strong>Personal Digest View</strong>
-              <span>User-focused feed output for direct updates.</span>
+              <strong>Grouped Story Output</strong>
+              <span>Related coverage bundled into one cleaner channel update.</span>
             </figcaption>
           </figure>
           <figure class="gallery-item" data-reveal>
             <img src="assets/example3.png" alt="Preference controls example" loading="lazy" />
             <figcaption class="gallery-caption">
-              <strong>Preference Controls</strong>
-              <span>Per-user tuning and topic behavior options.</span>
+              <strong>Channel Tuning View</strong>
+              <span>Admin-facing controls for feed behavior and story delivery style.</span>
             </figcaption>
           </figure>
           <figure class="gallery-item" data-reveal>
@@ -379,8 +368,8 @@
             <p>Most servers can run up to 3 news channels by default, each with its own delivery and formatting behavior.</p>
           </details>
           <details class="faq-item" data-reveal>
-            <summary>Can members get personal news without affecting channel settings?</summary>
-            <p>Yes. Users can run <code>/getnews</code> and maintain personal preferences independently of server channel configuration.</p>
+            <summary>What do members see after setup is complete?</summary>
+            <p>Members receive cleaner grouped stories directly in their server channels while admins keep control of setup and channel behavior.</p>
           </details>
           <details class="faq-item" data-reveal>
             <summary>Does the bot post every single article from every feed?</summary>
@@ -388,7 +377,7 @@
           </details>
           <details class="faq-item" data-reveal>
             <summary>Can server owners manage source naming and quality?</summary>
-            <p>Yes. Owner-side tools include source cleanup, title override controls, and feed review concepts for long-term channel quality.</p>
+            <p>Sources are curated and organized behind the scenes to keep channel delivery clear and consistent over time.</p>
           </details>
         </div>
       </div>
